@@ -1,7 +1,7 @@
-import React from 'react'
+import Form from "../components/Forms"
 
-export const Login = () => {
-  return (
-    <div>Login</div>
-  )
+function Login() {
+    return <Form route="/api/token/" method="login" />
 }
+
+export default Login

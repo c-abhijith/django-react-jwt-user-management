@@ -1,11 +1,13 @@
 import './App.css';
 import { BrowserRouter,Routes,Route,Navigate, Router } from 'react-router-dom';
-import { Login } from './pages/Login';
-import { Register } from './pages/Register';
-import { Home } from './pages/Home';
+
+import Home  from './pages/Home';
 import { RouterProvider } from 'react-router-dom';
-import { NotFound } from './pages/NotFound';
+
 import ProtectedRoute from './components/ProtectedRoute';
+import NotFound from './pages/NotFound';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 function Logout(){
@@ -19,16 +21,17 @@ function RegisterAndLogout(){
 }
 function App() {
   return (
+
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ProtectedRoute>
+        {/* <Route path='/' element={<ProtectedRoute>
           <Home/>
-        </ProtectedRoute>}/>
-      </Routes>
+        </ProtectedRoute>}/> */}
       <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </BrowserRouter>
   );
 }
